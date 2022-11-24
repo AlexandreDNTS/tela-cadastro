@@ -13,7 +13,7 @@ def tela_inicial():
         [sg.Text('senha')],
         [sg.Input(key='senha', password_char='*')],
         [sg.Text('confirmar senha')],
-        [sg.Input(key='confirmar sennha', password_char='*')],
+        [sg.Input(key='confirmar senha', password_char='*')],
         [sg.Button('cadastrar')],
         [sg.Text('', key='msg')]
     ]
@@ -26,3 +26,6 @@ while True:
     window, eventos, valores = sg.read_all_windows()
     if eventos == sg.WIN_CLOSED:
         break
+    if window == telaInicial and eventos == 'cadastrar':
+        if valores['nome'] == '' or valores['sobrenome'] == '' or valores['e-mail'] == '' or valores['senha'] == '' or valores['confirmar senha'] == '':
+            print('erro')
