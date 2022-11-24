@@ -27,5 +27,15 @@ while True:
     if eventos == sg.WIN_CLOSED:
         break
     if window == telaInicial and eventos == 'cadastrar':
-        if valores['nome'] == '' or valores['sobrenome'] == '' or valores['e-mail'] == '' or valores['senha'] == '' or valores['confirmar senha'] == '':
-            print('erro')
+        if valores['nome'] == '':
+            print('o campo nome deve ser preenchido')
+        if valores['sobrenome'] == '':
+            print('o campo sobrenome deve ser preenchido')
+        if valores['e-mail'] == '':
+            print('o campo e-mail deve ser preenchido')
+        if valores['senha'] == '':
+            print('o campo senha deve ser preenchido')
+        if valores['confirmar senha'] == '':
+            print('o campo confirmar senha deve ser preenchido')
+        if valores['senha'] != valores['confirmar senha']:
+            print('as senhas devem ser iguais')
